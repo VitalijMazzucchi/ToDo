@@ -1,0 +1,9 @@
+<ul *ngFor="let ele of listacompletati">
+  <li>
+    <label for="checked">{{ele.title}}</label>
+    <input type="checkbox" [checked]="ele.completed" (change)="ele.completed= !ele.completed" name="checked"
+      id="checked">
+    <button (click)="del(ele)">X</button>
+  </li>
+  <hr>
+</ul>

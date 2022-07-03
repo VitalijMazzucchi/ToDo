@@ -1,0 +1,16 @@
+<ul *ngFor="let ele of listaToDo">
+
+  <li>
+    <label for="checked"><span>&diams; ToDo: </span> {{ele.title}}</label>
+    <input type="checkbox" [checked]="ele.completed" (change)="ele.completed= !ele.completed" name="checked"
+      id="checked" value="">
+    <button (click)="del(ele)">X</button>
+    <button (click)="modify(ele)">&oast;</button>
+  </li>
+  <hr>
+</ul>
+
+<div *ngIf="listaToDo.length == 0">
+  <h3>Non ci sono Task</h3>
+  <hr>
+</div>
